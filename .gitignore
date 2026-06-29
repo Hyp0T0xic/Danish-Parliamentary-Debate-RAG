@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Project data — downloaded XML and generated chunks are not tracked
+data/raw/
+data/processed/
+# Chroma vector store
+data/chroma/
