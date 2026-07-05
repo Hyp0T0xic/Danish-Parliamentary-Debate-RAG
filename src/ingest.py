@@ -278,6 +278,9 @@ def _parse_tale(
 TARGET_WORDS = 320
 MAX_WORDS = 420
 OVERLAP_SENTENCES = 1
+# Procedural micro-speeches ("Ministeren.", "Værsgo.") carry no content but
+# embed as near-generic vectors that pollute retrieval — drop anything shorter.
+MIN_CHUNK_WORDS = 15
 
 # The Folketinget transcripts frequently omit the space after sentence-ending
 # punctuation ("Tak for det.Jeg bliver..."), so we first normalise: insert a
@@ -309,7 +312,7 @@ def chunk_speech(speech: Speech) -> list[Chunk]:
         if not buf:
             return
         text = " ".join(buf).strip()
-        if text:
+        if text and len(text.split()) >= MIN_CHUNK_WORDS:
             chunks.append(
                 Chunk(
                     chunk_id=f"{speech.speech_id}#{idx}",

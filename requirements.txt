@@ -8,3 +8,5 @@ streamlit>=1.39
 requests>=2.32
 pydantic>=2.8
 tqdm>=4.66
+truststore>=0.9
+
