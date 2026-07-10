@@ -23,9 +23,9 @@ EXAMPLE_QUESTIONS = [
     "Skal der være aldersgrænse for solarier?",
 ]
 
-st.set_page_config(page_title="Folketing RAG", page_icon="🏛️", layout="centered")
+st.set_page_config(page_title="Folketing RAG", layout="centered")
 
-st.title("🏛️ Spørg Folketinget")
+st.title("Spørg Folketinget")
 st.caption(
     "Stil et spørgsmål om folketingsdebatterne, og få et svar med kildehenvisninger "
     "til konkrete taler. Datagrundlag: 10 møder fra samling 2024-25 (maj-september 2025)."
